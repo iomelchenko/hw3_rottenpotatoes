@@ -5,7 +5,7 @@ Given /the following movies exist/ do |movies_table|
     # each returned element will be a hash whose key is the table header.
     # you should arrange to add that movie to the database here.
   end
-  assert false, "Unimplmemented"
+  flunk "Unimplemented"
 end
 
 # Make sure that one string (regexp) occurs before or after another one
@@ -14,7 +14,7 @@ end
 Then /I should see "(.*)" before "(.*)"/ do |e1, e2|
   #  ensure that that e1 occurs before e2.
   #  page.content  is the entire content of the page as a string.
-  assert false, "Unimplmemented"
+  flunk "Unimplemented"
 end
 
 # Make it easier to express checking or unchecking several boxes at once
