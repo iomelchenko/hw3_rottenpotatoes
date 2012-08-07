@@ -26,6 +26,6 @@ Scenario: sort movies alphabetically
   # your steps here
 
 Scenario: sort movies in increasing order of release date
-  When i follow "Release Date"
+  When I follow "Release Date"
   # your steps here
 
