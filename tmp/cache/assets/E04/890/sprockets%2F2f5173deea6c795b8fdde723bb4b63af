@@ -1,0 +1,56 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1359980168.8729594:@value{I"
+class:EFI"BundledAsset;
+FI"id;
+F"%1bbc0d246b8ea1f4973a9f70c261a314I"logical_path;
+FI"application.js;
+TI"pathname;
+FI"0$root/app/assets/javascripts/application.js;
+TI"content_type;
+FI"application/javascript;
+FI"
+mtime;
+FI"2013-02-04T03:40:46-08:00;
+FI"	body;
+FI"”// This is a manifest file that'll be compiled into including all the files listed below.
+// Add new JavaScript/Coffee code in separate files in this directory and they'll automatically
+// be included in the compiled file accessible from http://example.com/assets/application.js
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// the compiled file.
+//
+;
+;
+FI"asset_paths;
+F[I"g/home/ubuntu/.rvm/gems/ruby-1.9.3-p374/gems/jquery-rails-2.1.1/vendor/assets/javascripts/jquery.js;
+TI"k/home/ubuntu/.rvm/gems/ruby-1.9.3-p374/gems/jquery-rails-2.1.1/vendor/assets/javascripts/jquery_ujs.js;
+TI"0$root/app/assets/javascripts/application.js;
+TI"dependency_paths;
+F[	{I"	path;
+FI"0$root/app/assets/javascripts/application.js;
+TI"
+mtime;
+FIu:	Time‹D€§M†
+:@_zoneI"PST;
+T:nano_numiq:nano_deni:submicro"ˆ:offsetiş€I"hexdigest;
+F"%0f1cfbc0bc3803a9dbf1a44d1da6ff92{I"	path;
+FI"!$root/app/assets/javascripts;
+TI"
+mtime;
+FIu;‹D€§M†
+;I"PST;
+T;iq;i;"ˆ;iş€I"hexdigest;
+F"%9fc91fc75938cd11a57805188f2a2260{I"	path;
+FI"g/home/ubuntu/.rvm/gems/ruby-1.9.3-p374/gems/jquery-rails-2.1.1/vendor/assets/javascripts/jquery.js;
+TI"
+mtime;
+FIu;‹D€iğí¢
+;I"PST;
+T;iÙ;i;"˜P;iş€I"hexdigest;
+F"%a972cfe4e85bb47d39f9e015cbbd8ab1{I"	path;
+FI"k/home/ubuntu/.rvm/gems/ruby-1.9.3-p374/gems/jquery-rails-2.1.1/vendor/assets/javascripts/jquery_ujs.js;
+TI"
+mtime;
+FIu;‹D€iğí¢
+;I"PST;
+T;iÙ;i;"˜P;iş€I"hexdigest;
+F"%274bf67ebc042c9f3e848baba8b36eddI"_version;
+F"%0868aba5d4b750d3a9421721ea3d9b9c
