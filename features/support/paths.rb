@@ -6,21 +6,41 @@
 module NavigationHelpers
   # Maps a name to a path. Used by the
   #
-  #   When /^I go to (.+)$/ do |page_name|
+  # When /^I go to (.+)$/ do |page_name|
   #
   # step definition in web_steps.rb
   #
   def path_to(page_name)
+
     case page_name
 
-    when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
+    when /^the home\s?page$/
+      '/movies'
+    when /^the (RottenPotatoes )?home\s?page$/ then  '/movies'
     when /^the movies page$/ then '/movies'
+    when /the edit page for "(.*)"$/
+                  
+         edit_movie_path(Movie.find_by_title($1).id)
+
+    when /the details page for "(.*)"$/
+              #binding.pry
+         "/movies/" + "#{Movie.find_by_title($1).id}"
+
+    when /the Similar Movies page for "(.*)"$/
+        
+        if Movie.find_by_title($1).director.to_s != '' 
+              #binding.pry
+             "/movies/" + "#{Movie.find_by_title($1).id}" + "/director"        
+        else
+             '/movies'
+       #binding.pry
+        end
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
-    #   when /^(.*)'s profile page$/i
-    #     user_profile_path(User.find_by_login($1))
+    # when /^(.*)'s profile page$/i
+    # user_profile_path(User.find_by_login($1))
 
     else
       begin

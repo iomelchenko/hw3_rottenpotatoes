@@ -1,0 +1,17 @@
+-# in app/views/movies/show.html.haml
+
+%h2 Movies with the same director - #{@movie.director} 
+
+
+
+- @director.each do |dir|
+ %li
+  %td= link_to "#{dir.title}", movie_path(dir) 
+
+%p
+
+
+%div
+= link_to 'Back to movie list', movies_path
+%div
+= link_to "Back to movie - #{@movie.title}", movie_path(@movie)

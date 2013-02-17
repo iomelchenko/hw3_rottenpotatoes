@@ -17,9 +17,6 @@
 # * http://dannorth.net/2011/01/31/whose-domain-is-it-anyway/
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
-#
-#
-#
 
 
 require 'uri'
@@ -57,12 +54,16 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
 end
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
+
   click_link(link)
+
 end
 
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
+  #binding.pry
   fill_in(field, :with => value)
 end
+
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
   fill_in(field, :with => value)
@@ -70,11 +71,11 @@ end
 
 # Use this to fill in an entire form with data from a table. Example:
 #
-#   When I fill in the following:
-#     | Account Number | 5002       |
-#     | Expiry date    | 2009-11-01 |
-#     | Note           | Nice guy   |
-#     | Wants Email?   |            |
+# When I fill in the following:
+# | Account Number | 5002 |
+# | Expiry date | 2009-11-01 |
+# | Note | Nice guy |
+# | Wants Email? | |
 #
 # TODO: Add support for checkbox, select or option
 # based on naming conventions.
@@ -106,6 +107,7 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
+
   if page.respond_to? :should
     page.should have_content(text)
   else
@@ -232,6 +234,7 @@ end
  
 Then /^(?:|I )should be on (.+)$/ do |page_name|
   current_path = URI.parse(current_url).path
+
   if current_path.respond_to? :should
     current_path.should == path_to(page_name)
   else
@@ -243,7 +246,7 @@ Then /^(?:|I )should have the following query string:$/ do |expected_pairs|
   query = URI.parse(current_url).query
   actual_params = query ? CGI.parse(query) : {}
   expected_params = {}
-  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')} 
+  expected_pairs.rows_hash.each_pair{|k,v| expected_params[k] = v.split(',')}
   
   if actual_params.respond_to? :should
     actual_params.should == expected_params

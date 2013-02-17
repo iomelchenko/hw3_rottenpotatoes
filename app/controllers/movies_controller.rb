@@ -35,13 +35,29 @@ class MoviesController < ApplicationController
   end
 
   def create
+    
     @movie = Movie.create!(params[:movie])
+
     flash[:notice] = "#{@movie.title} was successfully created."
     redirect_to movies_path
   end
 
   def edit
     @movie = Movie.find params[:id]
+  end
+
+  def director
+
+    @movie = Movie.find(params[:id])
+
+    if (@movie.director == nil) || (@movie.director == "")
+
+       redirect_to movies_path  and return
+
+    else  
+       @director = Movie.find_all_by_director(@movie.director)
+    end   
+    #binding.pry
   end
 
   def update
