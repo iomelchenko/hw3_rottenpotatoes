@@ -2,7 +2,10 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'pry'
-gem 'pry-rails', :group => :development
+#gem 'pry-rails', :group => :development
+#gem 'rake', '~> 10.0.3'
+#gem 'rake', '10.0.3'
+gem 'therubyracer'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'

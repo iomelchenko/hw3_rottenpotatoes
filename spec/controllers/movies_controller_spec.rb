@@ -18,15 +18,18 @@ describe MoviesController do
     end
   end
 
-  describe 'edit page for appropriate Movie' do
-    it 'When I go to the edit page for the Movie, it should be loaded' do
-
-      mock = mock('Movie')
-
-      Movie.should_receive(:find).with('9').and_return(mock)
-     
-      get :edit, {:id => '9'}
-      response.should be_success
+  describe 'add director' do
+    before :each do
+      @m=mock(Movie, :title => "Star Wars", :director => "director", :id => "1")
+      Movie.stub!(:find).with("1").and_return(@m)
+    end
+    it 'should call update_attributes and redirect' do
+      @m.stub!(:update_attributes!).and_return(true)
+      put :update, {:id => "1", :movie => @m}
+      response.should redirect_to(movie_path(@m))
     end
   end
+
+
+ 
 end
